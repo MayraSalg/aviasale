@@ -1,0 +1,41 @@
+@import '~antd/dist/antd.css';
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #e5e5e5;
+}
+
+.App-wrapper{
+  min-height: 100vh;
+  background-color: red;
+  max-width: 754px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.logo{
+  position: relative;
+  width:60px;
+  height:60px;
+}
+.main{
+  border:2px solid black;
+  flex:1 1 auto;
+  display: grid;
+  grid-template-areas: "sidebar filter"
+                        "sidebar tickets";
+}
+.header{
+  padding: 50px 0;
+  text-align: center;
+}
+.sidebar{
+grid-area: sidebar;
+}
+.filter{
+  grid-area: filter;
+}
+.tickets{
+  grid-area: tickets;
+}
