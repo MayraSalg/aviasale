@@ -5,11 +5,10 @@ import { Checkbox , Divider } from 'antd';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import type { CheckboxValueType } from 'antd/es/checkbox/Group';
 
-
 const CheckboxGroup = Checkbox.Group;
 
-const plainOptions = ['Apple', 'Pear', 'Orange'];
-const defaultCheckedList = ['Apple', 'Orange'];
+const plainOptions = ['Без пересадок', '1 пересадка', ' 2 пересадки', ' 3 пересадки'];
+const defaultCheckedList = [''];
 
 const Checkboxer: React.FC = () => {
     const [checkedList, setCheckedList] = useState <CheckboxValueType[]>(defaultCheckedList);
@@ -30,8 +29,8 @@ const Checkboxer: React.FC = () => {
 
     return (
         <>
-            <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
-                Check all
+            <Checkbox indeterminate={false} onChange={onCheckAllChange} checked={checkAll}>
+                Все
             </Checkbox>
             <Divider />
             <CheckboxGroup options={plainOptions} value={checkedList} onChange={onChange} />

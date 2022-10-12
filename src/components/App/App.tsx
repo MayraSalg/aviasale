@@ -1,6 +1,8 @@
 import React from 'react';
 import img from './Logo.png';
 import Checkboxer from "../CheckBox/CheckBox";
+import Filter from "../Filter/Filter";
+import Tickets from "../Tickets/Tickets";
 
 function App() {
   return (
@@ -11,10 +13,13 @@ function App() {
           </div>
           <div className="main">
             <div className="sidebar">
+                <div className="sidebar_section">
+                <h3>Количество пересадок</h3>
                 <Checkboxer></Checkboxer>
+                </div>
             </div>
-            <div className="filter">1</div>
-            <div className="tickets">1</div>
+            <Filter></Filter>
+            <Tickets></Tickets>
           </div>
       </div>
     </div>
