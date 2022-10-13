@@ -3,13 +3,13 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #e5e5e5;
+  background-color: #F3F7FA;
 }
 
 .App-wrapper{
   min-height: 100vh;
-  background-color: bisque;
-  max-width: 820px;
+  background-color: #F3F7FA;
+  max-width: 960px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,6 @@ body{
   height:60px;
 }
 .main{
-  border:2px solid black;
   flex:1 1 auto;
   display: grid;
   grid-template-areas: "sidebar filter"
@@ -35,10 +34,10 @@ grid-area: sidebar;
 }
 .filter{
   grid-area: filter;
+  left: -50px;
+  position: relative;
 }
-.tickets{
-  grid-area: tickets;
-}
+
 .ant-checkbox-group {
   display: flex;
   flex-wrap: wrap;
@@ -75,7 +74,47 @@ h3{
   background-color: white;
 }
 .ant-radio-button-wrapper{
-  width:160px;
+  width:168px;
   height: 50px;
 }
+.tickets{
+  grid-area: tickets;
+  padding: 20px;
+  position: relative;
+  top: -120px;
+  left: -70px;
 
+}
+.ticket{
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  width:502px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.12);
+}
+.ticket_header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.ticket_price{
+  color: #2196F3;
+  font-size: 24px;
+  padding-top: 6px;
+}
+.ticket_logo{
+  width:140px;
+}
+.ticket_data{
+  display: flex;
+  justify-content: space-between;
+  margin-top:10px;
+  line-height: 10px;
+}
+.ticket_data-time_direction{
+  color: darkgray;
+  padding: -25px;
+  position: relative;
+
+}
