@@ -1,12 +1,17 @@
 import React from "react";
 import S7 from '../App/S7.png'
+import {ITicket} from "../Models/Models";
 
-export default function Tickets (){
+interface TicketProps{
+    ticket:ITicket
+}
+
+export default function Tickets ({ticket}:TicketProps){
     return(
         <div className="tickets">
             <div className="ticket">
                 <div className="ticket_header">
-                    <div className="ticket_price">13 400r</div>
+                    <div className="ticket_price">12345</div>
                     <div className="ticket_logo">
                         <img src={S7} alt="ticket logo"></img>
                     </div>
