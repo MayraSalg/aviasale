@@ -2,8 +2,9 @@ import React from "react";
 import S7 from '../App/S7.png'
 import {ITicket} from "../Models/Models";
 
+
 interface TicketProps{
-    ticket:ITicket
+    ticket:ITicket[]
 }
 
 export default function Tickets ({ticket}:TicketProps){
@@ -11,7 +12,7 @@ export default function Tickets ({ticket}:TicketProps){
         <div className="tickets">
             <div className="ticket">
                 <div className="ticket_header">
-                    <div className="ticket_price">12345</div>
+                    <div className="ticket_price">{3456}</div>
                     <div className="ticket_logo">
                         <img src={S7} alt="ticket logo"></img>
                     </div>

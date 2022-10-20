@@ -13,10 +13,6 @@ const initialState: TicketState = {
     error:"",
     tickets: []
 }
-interface TicketPayload {
-    tickets: ITicket[]
-    count: number
-}
 
 export const ticketSlices = createSlice({
     name:"ticket",

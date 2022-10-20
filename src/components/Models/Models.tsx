@@ -3,13 +3,12 @@ export interface ITicket{
     stop: boolean;
     loading:boolean;
     error:string;
+    ticket:[]
 }
 
 export interface ServerResponse<T>{
     price:number,
     carrier:string,
     destination:string,
-    duration:number,
-    tickets:T[],
-    searchId:number
+    tickets:T[]
 }
