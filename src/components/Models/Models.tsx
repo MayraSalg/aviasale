@@ -3,7 +3,10 @@ export interface ITicket{
     stop: boolean;
     loading:boolean;
     error:string;
-    ticket:[]
+    ticket: [];
+    destination:string;
+    origin:string;
+    segments:any
 }
 
 export interface ServerResponse<T>{

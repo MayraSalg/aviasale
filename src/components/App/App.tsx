@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import img from './Logo.png';
 import Checkboxer from "../CheckBox/CheckBox";
 import Filter from "../Filter/Filter";
-import Tickets from "../Tickets/Tickets";
+import Ticket from "../Tickets/Ticket";
 import {setupStore} from "../../Store/Store";
 import {fetchTickets} from "../Actions/TicketActions";
 import {useAppDispatch, useAppSelector} from "../../Hooks/Hooks";
@@ -30,7 +30,14 @@ function App() {
                 </div>
             </div>
             <Filter></Filter>
-            <Tickets ticket={tickets} key={2}></Tickets>
+              <div className="tickets">
+              {
+                tickets.map((ticket,index)=>{
+                    console.log(ticket)
+                    return <Ticket ticket={ticket} key={index}></Ticket>
+                })
+              }
+              </div>
           </div>
       </div>
     </div>

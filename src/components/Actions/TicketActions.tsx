@@ -1,5 +1,6 @@
 import axios from "axios";
 import TicketSlices, {ticketSlices} from "../../Store/Slices/TicketSlices";
+import {ITicket} from "../Models/Models";
 
 
 export const fetchTickets = () => {
@@ -9,11 +10,8 @@ export const fetchTickets = () => {
             let req = await axios.get(`https://front-test.dev.aviasales.ru/search`);
             let searchId = req.data.searchId
             let res =  await axios.get(`https://front-test.dev.aviasales.ru/tickets?searchId=${searchId}`);
-            let res2 = res.data
-            dispatch(ticketSlices.actions.ticketFetchingSuccess({
-                tickets:res.data.tickets,
-                error:""
-            }))
+            let tickets: ITicket[] = await res.data.tickets;
+            dispatch(ticketSlices.actions.ticketFetchingSuccess(tickets))
         }
 
 
