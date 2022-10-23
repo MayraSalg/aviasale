@@ -6,7 +6,12 @@ export interface ITicket{
     ticket: [];
     destination:string;
     origin:string;
-    segments:any
+    segments:any;
+    stops:any;
+    duration:number;
+    date:string;
+    carrier:string;
+
 }
 
 export interface ServerResponse<T>{

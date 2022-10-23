@@ -5,13 +5,15 @@ import {ITicket} from "../../components/Models/Models";
 interface TicketState {
     loading:boolean,
     error:string,
-    tickets:ITicket[]
+    tickets:ITicket[],
+    limitData : number
 }
 
 const initialState: TicketState = {
     loading:false,
     error:"",
-    tickets: []
+    tickets: [],
+    limitData: 5
 }
 
 export const ticketSlices = createSlice({
@@ -30,8 +32,14 @@ export const ticketSlices = createSlice({
             state.loading = false
             state.error = action.payload.message
         },
+        plus(state) {
+            state.limitData += 5;
+        },
 
     }
 })
 
 export default ticketSlices.reducer
+export const {
+    plus
+} = ticketSlices.actions;

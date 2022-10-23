@@ -6,12 +6,13 @@ import Ticket from "../Tickets/Ticket";
 import {setupStore} from "../../Store/Store";
 import {fetchTickets} from "../Actions/TicketActions";
 import {useAppDispatch, useAppSelector} from "../../Hooks/Hooks";
+import {plus} from "../../Store/Slices/TicketSlices";
 
 
 
 function App() {
     const dispatch = useAppDispatch()
-    const {error,loading,tickets} = useAppSelector(state => state.ticket)
+    const {error,loading,tickets, next} = useAppSelector(state => state.ticket)
     useEffect(()=>{
         dispatch(fetchTickets())
     },[dispatch])
@@ -32,12 +33,17 @@ function App() {
             <Filter></Filter>
               <div className="tickets">
               {
-                tickets.map((ticket,index)=>{
+                tickets.slice(0, next).map((ticket,index)=>{
                     console.log(ticket)
                     return <Ticket ticket={ticket} key={index}></Ticket>
                 })
               }
               </div>
+              <label>
+                  <button onClick={() => dispatch(plus())}>
+                      show 5 more tickets
+                  </button>
+              </label>
           </div>
       </div>
     </div>
