@@ -12,6 +12,7 @@ export interface ITicket{
     date:string;
     carrier:string;
 
+
 }
 
 export interface ServerResponse<T>{

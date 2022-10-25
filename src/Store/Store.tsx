@@ -1,5 +1,5 @@
 import { configureStore ,combineReducers } from "@reduxjs/toolkit";
-import ticketSlices from "./Slices/TicketSlices"; //возмлжна ошибка и надо импорт тикетредьюсер
+import ticketSlices from "./Slices/TicketSlices";
 
 
 const rootReducer = combineReducers({

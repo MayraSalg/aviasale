@@ -6,14 +6,13 @@ interface TicketState {
     loading:boolean,
     error:string,
     tickets:ITicket[],
-    limitData : number
+
 }
 
 const initialState: TicketState = {
     loading:false,
     error:"",
-    tickets: [],
-    limitData: 5
+    tickets: []
 }
 
 export const ticketSlices = createSlice({
@@ -31,15 +30,9 @@ export const ticketSlices = createSlice({
         ticketFetchingError(state, action: PayloadAction<Error>) {
             state.loading = false
             state.error = action.payload.message
-        },
-        plus(state) {
-            state.limitData += 5;
-        },
+        }
 
     }
 })
 
 export default ticketSlices.reducer
-export const {
-    plus
-} = ticketSlices.actions;

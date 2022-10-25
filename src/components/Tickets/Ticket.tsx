@@ -8,6 +8,8 @@ interface TicketProps {
 }
 
 export default function Ticket({ticket}: TicketProps) {
+    //let threeStops = (ticket.segments[0].stops.length)
+    //threeStops.filter((a:number)=>{return a === 3})
     return (
         <div className="ticket">
             <div className="ticket_header">
@@ -27,8 +29,9 @@ export default function Ticket({ticket}: TicketProps) {
                         <p>{Math.floor(ticket.segments[0].duration / 60)}h {Math.ceil(((ticket.segments[0].duration % 60) * 60) / 100)}m</p>
                     </div>
                     <div className="ticket_data-time">
-                        <p className="ticket_data-time_direction">{ticket.segments[0].stops.length ? ticket.segments[0].stops.length : 'Нет'} Пересадок</p>
+                        <p className="ticket_data-time_direction">{ticket.segments[0].stops.length ? ticket.segments[0].stops.length : 'No'} Stops</p>
                         <p>{ticket.segments[0].stops + " "}</p>
+
                     </div>
                 </div>
                 <div className="ticket_data">
@@ -41,7 +44,7 @@ export default function Ticket({ticket}: TicketProps) {
                         <p>{Math.floor(ticket.segments[1].duration / 60)}h {Math.ceil(((ticket.segments[1].duration % 60) * 60) / 100)}m</p>
                     </div>
                     <div className="ticket_data-time">
-                        <p className="ticket_data-time_direction">{ticket.segments[1].stops.length ? ticket.segments[1].stops.length : 'Нет'} Пересадок</p>
+                        <p className="ticket_data-time_direction">{ticket.segments[1].stops.length ? ticket.segments[1].stops.length : 'No'} Stops</p>
                         <p>{ticket.segments[1].stops + " "}</p>
                     </div>
                 </div>
