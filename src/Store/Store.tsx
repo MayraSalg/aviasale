@@ -1,14 +1,15 @@
-import { configureStore ,combineReducers } from "@reduxjs/toolkit";
-import ticketSlices from "./Slices/TicketSlices";
+import { configureStore ,combineReducers } from '@reduxjs/toolkit';
+
+import ticketSlices from './Slices/TicketSlices';
 
 
 const rootReducer = combineReducers({
-    ticket:ticketSlices
+  ticket:ticketSlices
 })
 export function setupStore() {
-    return configureStore({
-        reducer: rootReducer
-    })
+  return configureStore({
+    reducer: rootReducer
+  })
 }
 
 export type RootState = ReturnType<typeof rootReducer>

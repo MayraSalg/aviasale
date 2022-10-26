@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+
 import './components/index.scss';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from "react-router-dom";
-import {Provider} from "react-redux";
-import {setupStore} from "./Store/Store";
+import {setupStore} from './Store/Store';
 
 const store = setupStore()
 
@@ -14,11 +15,11 @@ const root = ReactDOM.createRoot(
 )
 
 root.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    </BrowserRouter>
+  <BrowserRouter>
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  </BrowserRouter>
 )
 
 // If you want to start measuring performance in your app, pass a function
