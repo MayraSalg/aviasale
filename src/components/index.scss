@@ -81,7 +81,7 @@ h3{
   grid-area: tickets;
   padding: 20px;
   position: relative;
-  top: -120px;
+  top: 0;
   left: -70px;
 
 }
@@ -117,4 +117,34 @@ h3{
   padding: -25px;
   position: relative;
 
+}
+.ant-btn {
+  left:360px;
+  background: #2196F3;
+  color:white;
+  top:-20px;
+}
+.ant-radio-button-wrapper-checked:not([class*=" ant-radio-button-wrapper-disabled"]).ant-radio-button-wrapper:first-child{
+  width:250px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.ant-radio-button-wrapper:last-child{
+  width:250px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.ant-radio-group{
+  text-align: center;
+}
+span{
+  vertical-align: middle;
+  font-size: 16px;
+}
+.ant-radio-button-wrapper:first-child{
+  width:250px;
+}
+.ant-spin-nested-loading{
+  top:-300px;
+  left:400px;
 }
