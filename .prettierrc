@@ -1,6 +1,8 @@
 {
-  "singleQuote": true,
+  "singleQuote": false,
+  "semi": false,
   "trailingComma": "all",
   "endOfLine": "lf",
+  "eslint.autoFixOnSave": true,
   "printWidth": 120
 }
