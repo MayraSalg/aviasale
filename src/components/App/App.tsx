@@ -14,7 +14,7 @@ import img from './Logo.png'
 
 function App() {
   const dispatch = useAppDispatch()
-  let ticketsPerPage = 5;
+  const ticketsPerPage = 5;
   const [next, setNext] = useState(ticketsPerPage)
   const handleMoreImage = () => {
     setNext(next + ticketsPerPage);
