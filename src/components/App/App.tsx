@@ -3,28 +3,27 @@ import img from './Logo.png';
 import Checkboxer from "../CheckBox/CheckBox";
 import Filter from "../Filter/Filter";
 import Ticket from "../Tickets/Ticket";
-import {setupStore} from "../../Store/Store";
 import {fetchTickets} from "../Actions/TicketActions";
 import {useAppDispatch, useAppSelector} from "../../Hooks/Hooks";
 import {Button} from "antd";
-import {CheckboxValueType} from "antd/es/checkbox/Group";
+import Loader from "../Loader/Loader";
+
 
 
 function App() {
-    //document.body.addEventListener('click',e => console.log(e.target))
     const dispatch = useAppDispatch()
     let ticketsPerPage = 5;
     const [next, setNext] = useState(ticketsPerPage)
     const handleMoreImage = () => {
         setNext(next + ticketsPerPage);
     };
-    const simpleCallback : any = (input : any) => {
-        console.log(input)
-    }
-    const {error, loading, tickets} = useAppSelector(state => state.ticket)
+    const {error, loading, tickets, filters} = useAppSelector(state => state.ticket)
     useEffect(() => {
         dispatch(fetchTickets())
     }, [dispatch])
+    //console.log(tickets)
+    //console.log(filters)
+    let load = loading
     return (
         <>
             <div className="App">
@@ -36,16 +35,22 @@ function App() {
                         <div className="sidebar">
                             <div className="sidebar_section">
                                 <h3>Количество пересадок</h3>
-                                <Checkboxer />
+                                <Checkboxer/>
                             </div>
                         </div>
                         <Filter></Filter>
+                        { loading? <Loader/> : null}
                         <div className="tickets">
                             {
-                                tickets.slice(0, next).map((ticket, index) => {
-                                    return <Ticket ticket={ticket} key={index}></Ticket>
-                                })
+                                tickets
+                                    .filter(t => filters.includes(t.segments[0].stops.length) && filters.includes(t.segments[1].stops.length))
+                                    .slice(0, next)
+                                    .map((ticket, index) => {
+                                        return <Ticket ticket={ticket} key={index}></Ticket>
+                                    })
+
                             }
+
                         </div>
 
                         {next < tickets.length && (

@@ -11,8 +11,6 @@ export interface ITicket{
     duration:number;
     date:string;
     carrier:string;
-
-
 }
 
 export interface ServerResponse<T>{
