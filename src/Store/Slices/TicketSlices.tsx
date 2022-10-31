@@ -64,6 +64,13 @@ export const ticketSlices = createSlice({
     },
     ticketsSortFastest(state){
       state.tickets = state.tickets.sort((a, b) => a.segments[0].duration - b.segments[0].duration);
+    },
+    ticketsSortOptimal(state){
+      state.tickets = state.tickets.sort((a, b) => {
+        const price = Math.floor(a.price / 2) + a.segments[0].duration;
+        const duration = Math.floor(b.price / 2) + b.segments[0].duration;
+        return price - duration;
+      });
     }
   }
 })

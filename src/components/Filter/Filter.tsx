@@ -14,6 +14,9 @@ const Filter = () => {
   const onClickFastest = () => {
     dispatch(ticketSlices.actions.ticketsSortFastest());
   };
+  const onClickOptimal = () => {
+    dispatch(ticketSlices.actions.ticketsSortOptimal());
+  };
   return (
     <>
       <div className="filter">
@@ -21,6 +24,7 @@ const Filter = () => {
           <Radio.Button value="a" className='filter_fastest' onClick={onClickFastest}>Самый
           быстрый</Radio.Button>
           <Radio.Button value="b" className='filter_cheapest' onClick={onClick}>Самый дешевый</Radio.Button>
+          <Radio.Button value="c" className='filter_optimal' onClick={onClickOptimal}> Самый оптимальный</Radio.Button>
         </Radio.Group>
       </div>
     </>

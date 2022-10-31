@@ -89,7 +89,7 @@ h3{
   padding: 20px;
   margin-bottom: 20px;
   background-color: white;
-  width:502px;
+  width:517px;
   border-radius: 5px;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.12);
 }
@@ -125,12 +125,12 @@ h3{
   top:-20px;
 }
 .ant-radio-button-wrapper-checked:not([class*=" ant-radio-button-wrapper-disabled"]).ant-radio-button-wrapper:first-child{
-  width:250px;
+  width:160px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 .ant-radio-button-wrapper:last-child{
-  width:250px;
+  width:190px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -142,7 +142,7 @@ span{
   font-size: 16px;
 }
 .ant-radio-button-wrapper:first-child{
-  width:250px;
+  width:160px;
 }
 .ant-spin-nested-loading{
   top:-300px;
